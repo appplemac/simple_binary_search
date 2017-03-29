@@ -1,4 +1,3 @@
 test:
   override:
     - gcc -o simple_binary_search simple_binary_search.cpp
-
