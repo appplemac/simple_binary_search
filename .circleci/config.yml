@@ -2,10 +2,10 @@ version: 2
 jobs:
   compile:
     docker:
-      - image: gcc:latest
+      - image: frolvlad/alpine-gcc:latest
     steps:
       - checkout
-      - run: gcc -o binary_search binary_search.cpp
+      - run: g++ -o binary_search binary_search.cpp
   echo:
     docker:
       - image: ubuntu:latest
