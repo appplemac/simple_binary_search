@@ -1,0 +1,21 @@
+version: 2
+jobs:
+  compile:
+    docker:
+      image: gcc:latest
+    steps:
+      - name: gcc
+        run: gcc -o binary_search binary_search.cpp
+  echo:
+    docker:
+      image: ubuntu:latest
+    steps:
+      - name: echo
+        run: echo "hi there"
+
+workflows:
+  version: 2
+  compile-and-echo:
+    jobs:
+      - compile
+      - echo
