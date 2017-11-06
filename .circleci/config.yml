@@ -4,14 +4,13 @@ jobs:
     docker:
       - image: gcc:latest
     steps:
-      - name: gcc
-        run: gcc -o binary_search binary_search.cpp
+      - checkout
+      - run: gcc -o binary_search binary_search.cpp
   echo:
     docker:
       - image: ubuntu:latest
     steps:
-      - name: echo
-        run: echo "hi there"
+      - run: echo "hi there"
 
 workflows:
   version: 2
