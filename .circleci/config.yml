@@ -1,20 +1,9 @@
 version: 2
 jobs:
-  compile:
+  build:
     docker:
       - image: gcc:latest
     steps:
       - checkout
       - run: gcc -o binary_search binary_search.cpp
-  echo:
-    docker:
-      - image: ubuntu:latest
-    steps:
-      - run: echo "hi there"
-
-workflows:
-  version: 2
-  compile-and-echo:
-    jobs:
-      - compile
-      - echo
+      - sleep 60
