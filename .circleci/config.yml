@@ -3,6 +3,8 @@ jobs:
   build:
     docker:
       - image: gcc:latest
+      - image: postgres:9.6
+        name: postgres
     steps:
       - checkout
       - run: gcc -o binary_search binary_search.cpp
